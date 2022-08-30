@@ -1,22 +1,64 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 
+import { Route, Routes } from 'react-router-dom';
+import { listCategory } from './api/Categories';
+import { list } from './api/Product';
 import './App.css';
-import { Routes, Route } from 'react-router-dom'
-import HomePage from './pages/hompage';
+import AdminLayout from './layouts/AdminLayout';
+import WebLayout from './layouts/webLayout';
+import { ICategori } from './models/Categories';
+import { IProduct } from './models/Products';
+import Categories from './pages/admin/Categories/Categories';
+import CategoriesAdd from './pages/admin/Categories/CategoriesAdd';
+import CategoriesEdit from './pages/admin/Categories/CategoriesEdit';
+import Dashbroad from './pages/admin/dashbroad';
+import Producs from './pages/admin/Products/Producs';
+import ProductAdd from './pages/admin/Products/ProductAdd';
+import ProductEdit from './pages/admin/Products/ProductEdit';
+import HomePage from './pages/Website/hompage/hompage';
 
 function App() {
+  const [products, setProducts] = useState<IProduct[]>([])
+  const [categories, setCategories] = useState<ICategori[]>([])
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const { data } = await list();
+      setProducts(data)
+    }
+    getProducts();
+  }, []);
+  useEffect(() => {
+    const getCategories = async () => {
+      const { data } = await listCategory();
+      setCategories(data)
+    }
+    getCategories();
+  }, []);
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-      <header className="App-header">
-        <img src={logo}  className="App-logo f " alt="logo" />
-        <Routes>
-          <Route index element={<HomePage />} />
-        </Routes>
-      </header>
+      <Routes>
+        <Route index element={<WebLayout />} />
+
+        <Route path="admin" element={<AdminLayout />}>
+
+          <Route index element={<Dashbroad />} />
+
+
+          <Route path="products">
+            <Route index element={<Producs product={products} />} />
+            <Route path="add" element={<ProductAdd />} />
+            <Route path=":id/edit" element={<ProductEdit />} />
+          </Route>
+          <Route path="categories">
+            <Route index element={<Categories categories={categories} />} />
+            <Route path="add" element={<CategoriesAdd />} />
+            <Route path=":id/edit" element={<CategoriesEdit />} />
+          </Route>
+
+        </Route>
+
+      </Routes>
     </div>
   );
 }

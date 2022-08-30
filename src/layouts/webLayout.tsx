@@ -1,16 +1,20 @@
-import React from 'react'
-import {Outlet} from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
+import Header from '../pages/Website/header/header'
 
 type Props = {}
 
-const webLayout = (props: Props) => {
+const WebLayout = (props: Props) => {
   return (
-    <div>webLayout
+    <><header>
+      <Header />
+    </header>
+
+      <div>
         <main>
-        <Outlet />
+          <Outlet />
         </main>
-    </div>
+      </div></>
   )
 }
 
-export default webLayout
+export default WebLayout
