@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { listCategory } from './api/Categories';
 import { list } from './api/Product';
-import './App.css';
 import AdminLayout from './layouts/AdminLayout';
 import WebLayout from './layouts/webLayout';
 import { ICategori } from './models/Categories';
@@ -15,7 +14,6 @@ import Dashbroad from './pages/admin/dashbroad';
 import Producs from './pages/admin/Products/Producs';
 import ProductAdd from './pages/admin/Products/ProductAdd';
 import ProductEdit from './pages/admin/Products/ProductEdit';
-import HomePage from './pages/Website/hompage/hompage';
 
 function App() {
   const [products, setProducts] = useState<IProduct[]>([])
