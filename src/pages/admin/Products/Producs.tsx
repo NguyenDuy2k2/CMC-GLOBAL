@@ -17,6 +17,7 @@ const Producs = (props: Props) => {
                     <PathComponent name1='Dashboard' name2='Products' />
                 </div>
                 <table className="w-full border">
+                <ButtonComponent customStyle="bg-blue-500 text-white"  >Add</ButtonComponent>
                     <thead>
                         <tr className="bg-gray-50 border-b">
 

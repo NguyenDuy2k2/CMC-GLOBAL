@@ -14,6 +14,7 @@ import Dashbroad from './pages/admin/dashbroad';
 import Producs from './pages/admin/Products/Producs';
 import ProductAdd from './pages/admin/Products/ProductAdd';
 import ProductEdit from './pages/admin/Products/ProductEdit';
+import Login from './pages/login/login';
 
 function App() {
   const [products, setProducts] = useState<IProduct[]>([])
@@ -37,6 +38,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route index element={<WebLayout />} />
+        <Route path='login' element={<Login />} />
 
         <Route path="admin" element={<AdminLayout />}>
 
