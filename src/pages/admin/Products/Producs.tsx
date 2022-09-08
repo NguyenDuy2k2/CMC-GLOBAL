@@ -3,6 +3,7 @@ import { ButtonComponent } from '../../../components/button/button';
 import { IconRoud } from '../../../components/Icons/IconRoud';
 import { PathComponent } from '../../../components/Path/Path';
 import { IProduct } from '../../../models/Products'
+import { ProductEdit } from './ProductEdit';
 
 
 type Props = {
@@ -61,7 +62,7 @@ const Producs = (props: Props) => {
                                 <td className="p-2 border-r">{item.email}</td>
                                 <td className="p-2 border-r "><img className=' w-20 h-20 ' src={item.image} alt="" /></td>
                                 <td>
-                                    <ButtonComponent customStyle="bg-blue-500 text-white" >Edit</ButtonComponent>
+                                    <ButtonComponent customStyle="bg-blue-500 text-white" ><ProductEdit /></ButtonComponent>
                                     <ButtonComponent customStyle="bg-red-500 text-white " >Remove</ButtonComponent>
                                 </td>
                             </tr>

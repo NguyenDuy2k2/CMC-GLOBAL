@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { ButtonDropdown } from './ButtonDropdown'
 
 type Props = {}
@@ -15,6 +16,10 @@ export const HeaderAdmin = (props: Props) => {
                 <nav className="contents">
                     <ul className="ml-4 xl:w-48 flex items-center justify-end">
                         <li className="ml-2 lg:ml-4 relative inline-block">
+                            <ButtonDropdown />
+
+                        </li>
+                        <li className="ml-2 lg:ml-4 relative inline-block">
                             <a className='/admin' href=''>
                                 <div className="absolute -top-1 right-0 z-10 bg-yellow-400 text-xs font-bold px-1 py-0.5 rounded-sm">{/* số lượng thông báo chưa xem */}</div>
                                 <svg className="h-8 w-8 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -22,14 +27,11 @@ export const HeaderAdmin = (props: Props) => {
                                 </svg>
                             </a>
                         </li>
-                        <li className="ml-2 lg:ml-4 relative inline-block">
+                        <li className="ml-2 lg:ml-4 relative inline-block ">
                             <a className="" href=''>
                                 <div className="absolute -top-1 right-0 z-10 bg-yellow-400 text-xs font-bold px-1 py-0.5 rounded-sm">{/* số lượng tin nhắn chờ */}</div>
                                 <svg className="h-8 w-8 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />  <polyline points="22,6 12,13 2,6" /></svg>
                             </a>
-                        </li>
-                        <li className="ml-2 lg:ml-4 relative inline-block ">
-                            <ButtonDropdown />
                         </li>
                     </ul>
                 </nav>
