@@ -14,7 +14,9 @@ import CategoriesEdit from './pages/admin/Categories/CategoriesEdit';
 import Dashbroad from './pages/admin/dashbroad';
 import Producs from './pages/admin/Products/Producs';
 import ProductAdd from './pages/admin/Products/ProductAdd';
-import Login from './pages/login/login';
+import ProductEdit from './pages/admin/Products/ProductEdit';
+import Login from './pages/User/login';
+import Signup from './pages/User/Signup';
 
 function App() {
   const [products, setProducts] = useState<IProduct[]>([])
@@ -39,12 +41,14 @@ function App() {
       <Routes>
         <Route index element={<WebLayout />} />
         <Route path='login' element={<Login />} />
+        <Route path='signup' element={<Signup />} />
 
         <Route path="admin" element={<AdminLayout />}>
           <Route index element={<Dashbroad />} />
           <Route path="products">
             <Route index element={<Producs product={products} />} />
             <Route path="add" element={<ProductAdd />} />
+            <Route path=":id/edit" element={<ProductEdit />} />
           </Route>
           <Route path="categories">
             <Route index element={<Categories categories={categories} />} />

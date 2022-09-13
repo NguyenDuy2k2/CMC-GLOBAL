@@ -15,6 +15,7 @@ const AdminLayout = (props: Props) => {
           <HeaderAdmin />
           <div className="pt-16">
           <Outlet />
+
           </div>
         </div>
       </div>
