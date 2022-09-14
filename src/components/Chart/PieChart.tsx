@@ -39,7 +39,7 @@ const renderCustomizedLabel = ({
 
 export const ChartPie = (props: Props) => {
     return (
-        <PieChart width={400} height={400} >
+        <PieChart width={520} height={400}  >
             <Pie data={data}
                 cx="50%"
                 cy="50%"
