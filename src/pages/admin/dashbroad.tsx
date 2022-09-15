@@ -27,12 +27,13 @@ const dashbroad = (props: Props) => {
             <LayoutListed name={"Issues"} price={"3"} customStyle="from-red-200 to-red-100 border-b-4 border-red-500" style=" bg-red-600"/>
           </div>
           <div className="flex flex-row flex-wrap flex-grow mt-2">
-            <LayoutChart children={<ChartBar />} />
-            <LayoutChart children={<ChartPie />} />
-            <LayoutChart children={<ChartComposed />} />
-            <LayoutChart children={<ChartBar />} />
-            <LayoutChart children={<ChartPie />} />
-            <LayoutChart children={<ChartComposed />} />
+            <LayoutChart children={<ChartBar />} title="Graph" />
+            <LayoutChart children={<ChartPie />} title="Graph"  />
+            <LayoutChart children={<ChartComposed />} title="Graph" />
+            
+            <LayoutChart children={<ChartBar />} title="Graph" />
+            <LayoutChart children={<ChartPie />} title="Graph" />
+            <LayoutChart children={<ChartComposed />} title="Graph" />
           </div>
         </div>
       </section>

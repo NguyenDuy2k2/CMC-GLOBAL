@@ -16,6 +16,7 @@ import Producs from './pages/admin/Products/Producs';
 import ProductAdd from './pages/admin/Products/ProductAdd';
 import ProductEdit from './pages/admin/Products/ProductEdit';
 import Login from './pages/User/login';
+import ManagerAccount from './pages/User/managerAccount';
 import Signup from './pages/User/Signup';
 
 function App() {
@@ -52,6 +53,11 @@ function App() {
           </Route>
           <Route path="categories">
             <Route index element={<Categories categories={categories} />} />
+            <Route path="add" element={<CategoriesAdd />} />
+            <Route path=":id/edit" element={<CategoriesEdit />} />
+          </Route>
+          <Route path="user">
+            <Route index element={<ManagerAccount  />} />
             <Route path="add" element={<CategoriesAdd />} />
             <Route path=":id/edit" element={<CategoriesEdit />} />
           </Route>

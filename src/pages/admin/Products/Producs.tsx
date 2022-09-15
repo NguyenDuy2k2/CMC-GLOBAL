@@ -3,8 +3,8 @@ import { ButtonComponent } from '../../../components/button/button';
 import { IconRoud } from '../../../components/Icons/IconRoud';
 import { PathComponent } from '../../../components/Path/Path';
 import { IProduct } from '../../../models/Products'
-import { TDComponent } from './components/td';
-import { THComponent } from './components/th';
+import { TDComponent } from '../components/td';
+import { THComponent } from '../components/th';
 
 type Props = {
     product: IProduct[];
@@ -37,7 +37,6 @@ const Producs = (props: Props) => {
                 </tbody>
             </table>
         </div>
-
     )
 }
 

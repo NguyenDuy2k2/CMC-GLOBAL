@@ -8,7 +8,6 @@ const WebLayout = (props: Props) => {
     <><header>
       <Header />
     </header>
-
       <div>
         <main>
           <Outlet />

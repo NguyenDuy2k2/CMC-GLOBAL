@@ -1,4 +1,4 @@
-import { IconRoud } from "../../../../components/Icons/IconRoud";
+import { IconRoud } from "../../../components/Icons/IconRoud";
 
 
 const data = [
